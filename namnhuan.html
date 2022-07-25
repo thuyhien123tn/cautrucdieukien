@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Năm nhuận</h1>
+    <input id="variable1" type="number" placeholder="Nhập 1 năm">
+    <button onclick="check()">Kiểm tra</button>
+    <h3 id="result"></h3>
+    <script>
+        const check = () => {
+  let a = +document.getElementById("variable1").value;
+  let checkRusult = false;
+  if (a % 4 == 0 && a % 100 !== 0) {
+    checkRusult = true;
+  }
+
+  if (a % 100 === 0 && a % 400 == 0) {
+    checkRusult = true;
+  }
+
+  const h3 = document.getElementById("result");
+  if (checkRusult) {
+    h3.innerHTML = a + " là năm nhuận";
+  } else {
+    h3.innerHTML = a + " không phải là năm nhuận";
+  }
+}
+    </script>
+</body>
+</html>
